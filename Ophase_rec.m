@@ -1,12 +1,15 @@
-function  holo_rec2 = phase_rec(filename, dx, dy, lambda, region)
+function  holo_rec2 = Ophase_rec(filename, dx, dy, lambda, region, save)
 
 arguments
-                filename {mustBeFile}
-                dx {mustBeNumeric} 
-                dy {mustBeNumeric} 
-                lambda {mustBeNumeric}
-                region {mustBeNumeric}
-            end
+    filename {mustBeFile}
+    dx {mustBeNumeric}
+    dy {mustBeNumeric}
+    lambda {mustBeNumeric}
+    region {mustBeNumeric}
+    save {mustBeInRange(save, 0, 1)}
+end
+
+[path,name,ext] = fileparts(filename);
 
 % Read hologram image and convert it to double precision
 holo = double(imread(filename));
@@ -14,7 +17,7 @@ holo = double(imread(filename));
 [N,M] = size(holo);
 % Create a meshgrid for the hologram
 [m,n] = meshgrid(-M/2:M/2-1,-N/2:N/2-1);
-% Calculate the Fourier Transform of the hologram 
+% Calculate the Fourier Transform of the hologram
 % and shift the zero-frequency component to the center
 ft_holo = fftshift(fft2(fftshift(holo)));
 figure(15), imagesc(log(abs(ft_holo).^2)), title 'FT hologram'
@@ -108,5 +111,10 @@ figure, imagesc(phase), colormap gray, title 'Phase reconstruida'
 
 FT_holo = FT(holo_rec2);
 figure, imagesc(log(abs(FT_holo).^2)), colormap gray, title 'FT centrado'
+
+if save == true
+    phaseName = strcat(path,name,"Phase_OI_DHM_output",ext);
+    imwrite(phase,gray(256),phaseName);
+end
 
 end
