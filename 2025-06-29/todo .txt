@@ -1,0 +1,6 @@
+add save button 2nd tab
+get img and max min, thic, inputs 
+diff between thic & phase is units 
+color bar only on phase 
+get rad from phase rc
+find map circ - if fcirc dont work use improfile (the line ) then plot
