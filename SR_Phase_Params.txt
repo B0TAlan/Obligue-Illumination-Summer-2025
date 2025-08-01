@@ -1,0 +1,1 @@
+ns:1.53\nnim: 1\nlambda: 0.532\nratio pf improvement: 1.85\nMax thickness: \n0.27362\nMinimum thickness: \n0.003405\nMax Phase: \n1.7127\nMinimum phase: \n0.021314

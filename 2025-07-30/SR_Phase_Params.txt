@@ -1,0 +1,9 @@
+Refractive Index Sample (ns):1.53
+Refactive Index Medium (nim): 1
+Wavelength (um): 0.532
+Pixel size(x,y): 4.65,4.65
+ratio of improvement: 1.85
+Max thickness: 0.27362
+Minimum thickness: 0.003405
+Max Phase: 1.7127
+Minimum phase: 0.021314
